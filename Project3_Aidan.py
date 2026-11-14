@@ -26,7 +26,7 @@ def check_game_status():
         display = ""
         for letter in secret_word:
             display += f"{letter} "
-        print()
+        print(display)
         return "win"
     if incorrect_guesses == max_guesses:
         print("Sorry! You ran out of guesses.")
@@ -56,3 +56,5 @@ def play_game():
         status = check_game_status()
         if status != "continue":
             break
+
+play_game()
