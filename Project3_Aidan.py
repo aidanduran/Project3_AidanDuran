@@ -15,3 +15,24 @@ def display_word():
         else:
             display += "_ "
     print(display)
+
+def check_game_status():
+    for letter in secret_word:
+        if letter not in guessed_letters:
+            break
+    else:
+        print("Congratulations! You guessed the word!")
+        print("Final word:")
+        display = ""
+        for letter in secret_word:
+            display += f"{letter} "
+
+        print()
+        return "win"
+
+    if incorrect_guesses == max_guesses:
+        print("Sorry! You ran out of guesses.")
+        print("The secret word was:", secret_word)
+        return "lose"
+
+    return "continue"
